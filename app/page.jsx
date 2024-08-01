@@ -833,6 +833,7 @@ export default function Home() {
   <img
     src="./assets/kit.png"
     alt=""
+    
     loading="lazy"
     decoding="async"
     data-nimg="1"
