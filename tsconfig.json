@@ -27,6 +27,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/**/*.{ts,tsx,jsx,js}" // Adjusted to include .js files if necessary
-, "app/BootstrapCarousel.jsx"  ],
+, "app/BootstrapCarousel.jsx", "app/page.jsx"  ],
   "exclude": ["node_modules"]
 }

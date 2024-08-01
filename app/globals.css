@@ -59,3 +59,7 @@
   text-align: left; /* Ensure text is left-aligned */
   margin-bottom: 10px; /* Optional: Adds spacing between items */
 }
+
+.overflow-auto::-webkit-scrollbar{
+  width:0;
+}

@@ -1,13 +1,11 @@
-import assets from "@/public/assets/assets";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+'use client';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Image from "next/image";
-import dynamic from 'next/dynamic';
-import React from "react";
-
-// Dynamically import BootstrapCarousel component to avoid SSR issues
-const BootstrapCarousel = dynamic(() => import('./BootstrapCarousel'), { ssr: false });
+import Link from 'next/link';
+import assets from "@/public/assets/assets";
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const aboutGradient =
@@ -18,12 +16,12 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <Image
+     <Image
         src={assets.Ellips}
         alt=""
         className="absolute -top-60 right-10 hidden w-[60%] md:block"
-        fill // Updated prop for next/image
-        style={{ objectFit: 'cover' }} // Updated prop for next/image
+        layout="fill"
+        objectFit="cover"
       />
 
       {/* Hero */}
@@ -409,42 +407,210 @@ export default function Home() {
       </section>
 
       {/* Our goal */}
-          <div>
-      <section className="overflow-hidden">
-        <div className="relative">
-          <Image
-            src={assets.EllipsBg}
-            alt="Background Ellipse"
-            className="absolute -top-[350px] -right-[340px] w-[50%]"
-            layout="fill" 
-            objectFit="cover" 
-          />
-          <Image
-            src={assets.Vector}
-            alt="Vector Illustration"
-            className="absolute -top-[350px] -right-[180px] w-[400px]"
-            layout="fixed" 
-          />
-        </div>
-        <div className="px-5 sm:px-10 md:px-20 mt-20 pt-20">
-          <div className="flex justify-center">
-            <div className="flex flex-col lg:w-[70%] text-center">
-              <h6 className="text-[#3ED5DD]">OUR TEAM</h6>
-              <h2 className="lg:text-5xl md:text-3xl text-2xl text-white my-2">
-                Executive Team
-              </h2>
-              <h5 className="text-white text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue metus quis accumsan euismod. Maecenas sed est
-              </h5>
-            </div>
-          </div>
-          <BootstrapCarousel />
-        </div>
-      </section>
-    </div>
-
       {/* Pricing table */}
-      
+      <section className="overflow-auto">
+      <div className="relative">
+        <Image
+          src={assets.EllipsBg}
+          alt="Background Ellipse"
+          className="absolute -top-[350px] -right-[340px] w-[50%]"
+          layout="fill" // If you want it to fill the parent element
+          objectFit="cover" // Ensures image covers the area while preserving aspect ratio
+        />
+        <Image
+          src={assets.Vector}
+          alt="Vector Illustration"
+          className="absolute -top-[350px] -right-[180px] w-[400px]"
+          layout="fixed" // Fixed layout if size is fixed
+        />
+      </div>
+      <div className=" px-5 sm:px-10 md:px-20 mt-20 pt-20">
+        <div className="flex justify-center">
+          <div className="flex flex-col lg:w-[70%] text-center">
+            <h6 className="text-[#3ED5DD]">OUR TEAM</h6>
+            <h2 className="lg:text-5xl md:text-3xl text-2xl text-white my-2">
+              Leadership Team
+            </h2>
+            <h5 className="text-white text-base">
+             There are people behind everything that works
+            </h5>
+          </div>
+        </div>
+        <div className="">
+          <div className="flex mt-10 w-[1800px] mb-5">
+            <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/assets/pix2.png"
+                alt="Abiola Shittu"
+                width={180}
+                height={180}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593]"
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Abiola Shittu</h1>
+              <h3 className="my-3">Founder</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/assets/pix4.png"
+                alt="Abiola Shittu"
+                width={140}
+                height={140}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593] "
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Ganiyu Precious</h1>
+              <h3 className="my-3">Operation Assistance</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+                </div>
+                </div>
+                <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/assets/pix3.png"
+                alt="Abiola Shittu"
+                width={140}
+                height={140}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593]"
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Adebayo Okuyiga</h1>
+              <h3 className="my-3">App Developer</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+                </div>
+                </div>
+                <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/assets/pix1.png"
+                alt="Abiola Shittu"
+                width={180}
+                height={180}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593]"
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Afolabi Shittu</h1>
+              <h3 className="my-3">Creative Designer</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+                </div>
+                </div>
+                <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/assets/pix5.png"
+                alt="Abiola Shittu"
+                width={140}
+                height={140}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593]"
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Mohamed Amine</h1>
+              <h3 className="my-3">Cybersecurity Analyst</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+                </div>
+                </div>
+                <div className="flex items-center flex-col justify-center w-[50%] text-white">
+              <Image
+                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabiola.67244cb5.png&w=1920&q=75"
+                alt="Abiola Shittu"
+                width={180}
+                height={180}
+                className="bg-gradient-to-r from-[#32333593] via-[#171717] via-30% via-[#171717] via-60% to-[#32333593]"
+                layout="intrinsic" // Adjust layout according to need
+              />
+              <h1 className="mt-5 text-xl font-bold">Okafor Onyebuchi</h1>
+              <h3 className="my-3">Front-End Developer</h3>
+              <div className="flex">
+                <a className="border-[1px] border-white rounded-md p-2" href="#/">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 32 32"
+                    className="text-2xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"></path>
+                  </svg>
+                </a>
+                </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
       {/* testimonial */}
       <section className="overflow-y-hidden overflow-hidden">
         <div className="relative">
@@ -663,20 +829,16 @@ export default function Home() {
         </div>
         <div className="px-5 sm:px-10 md:px-20 py-10 mt-10">
   <div className="md:flex justify-between items-start mb-7">
-    <div className="flex items-center">
-      <img
-        alt=""
-        loading="lazy"
-        width="50"
-        height="52"
-        decoding="async"
-        data-nimg="1"
-        style={{ color: 'transparent' }}
-        srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabisentry.1e2e2452.webp&amp;w=64&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabisentry.1e2e2452.webp&amp;w=128&amp;q=75 2x"
-        src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabisentry.1e2e2452.webp&amp;w=128&amp;q=75"
-      />
+  <div className="flex items-center">
+  <img
+    src="./assets/kit.png"
+    alt=""
+    loading="lazy"
+    decoding="async"
+    data-nimg="1"
+    style={{ width: '290px', height: '156px', color: 'transparent' }} // Adjust these values as needed
+  />
       <h3 className="text-white text-4xl ms-5">
-        Abi<span className="text-[#3ED5DD]">sentry</span>
       </h3>
     </div>
     <div className="md:w-[60%] text-white mt-5 md:mt-0">
@@ -708,8 +870,6 @@ export default function Home() {
           <p>Ethical Hacking</p>
         </div>
       </div>
-     
-      
     </div>
     <div className="md:flex justify-between">
       <div className="text-xl md:w-[50%] mt-4">
@@ -717,12 +877,15 @@ export default function Home() {
         <ul className="mt-2 text-base lg:text-lg md:text-start lg:text-center text-gray-300">
           <li>Testimonial</li>
           <li>Our Service</li>
-          <li>Security Policy</li>
-          <li>Security Policy</li>
+          <Link href="/security-policy"><li>Security Policy</li></Link>
+          <Link href="/privacy-policy"> <li>Privacy Policy</li> </Link>
           <li>Blog</li>
           <li>Products</li>
         </ul>
       </div>
+
+ 
+
       <div className="text-2xl md:w-[50%] mt-4">
         <h3>Contact Us</h3>
         <div className="mt-4 flex justify-center md:justify-between text-gray-300">
@@ -752,6 +915,7 @@ export default function Home() {
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
+              
             >
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
@@ -770,7 +934,8 @@ export default function Home() {
               <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
             </svg>
           </a>
-          <a className="border-[1px] border-gray-300 rounded-xl p-2 mx-6 md:mx-0" href="/#">
+          <a className="border-[1px] border-gray-300 rounded-xl p-2 mx-6 md:mx-0"     href="https://calendly.com/abisentry/answer">
+          
             <svg
               stroke="currentColor"
               fill="none"
@@ -850,7 +1015,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-      </div>
+    </div>
     </div>
     </section>
     </main>
