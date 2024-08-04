@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import NewsletterForm from '../components/NewsletterForm'; // Adjust the path as needed
 import Modal from '../components/Modal'; // Import the Modal component
 import { FaFacebook, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+
 
 // Example assets import, replace with your actual paths
 import assets from '../assets'; 
@@ -42,9 +44,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-8xl lg:text-9xl">Your Digital</h1>
               <h1 className="text-4xl sm:text-8xl lg:text-9xl">Fortress |</h1>
               <h1 className="text-4xl sm:text-8xl lg:text-9xl">Guard</h1>
-              <p className="text-sm sm:text-lg lg:text-xl">
-                We are on a quest to reinforce the digital world and guarantee the safety of our clients' priceless assets, fueled by a passion for security, AI, and a team of highly skilled experts.
-              </p>
+              <p className="text-sm sm:text-lg lg:text-xl">are on a quest to reinforce the digital world and guarantee the safety of our clients priceless assets, fueled by a passion for security, AI, and a team of highly skilled experts.</p>
             </div>
           </div>
 

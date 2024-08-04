@@ -28,7 +28,7 @@ export default function Home() {
       <div className="bg-[#323335ad] fixed top-0 left-0 right-0 z-50">
         <nav className="flex justify-between items-center py-5 px-10">
           <div className="hidden md:block">
-            <img
+            <image
               alt="Brand Name"
               loading="lazy"
               width="158"
@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </div>
           <a href="#home">
-            <img
+            <image
               alt="Brand Image"
               loading="lazy"
               width="64"
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="bg-black flex flex-col text-xl text-white justify-center items-center"></div>
       </div>
       <main className="relative scroll-smooth">
-        <img
+        <image
           alt=""
           loading="lazy"
           width="1189"
@@ -110,7 +110,7 @@ export default function Home() {
             <div className="h-auto flex flex-col justify-end md:w-[60%]">
               <div className="flex">
                 <div className="flex flex-col justify-center items-center">
-                  <img
+                  <image
                     alt=""
                     loading="lazy"
                     width="41"
@@ -127,7 +127,7 @@ export default function Home() {
                   <h2>Your Digital</h2>
                   <h2>Fortress | Guard</h2>
                   <p className="text-xs lg:text-base mt-4 font-medium">
-                    We are on quest to reinforce the digital world and guarantee the safety of our clients' priceless assets, and we are fueled by a passion for security, AI and a team of highly skilled experts.
+                    We are on quest to reinforce the digital world and guarantee the safety of our clients priceless assets, and we are fueled by a passion for security, AI and a team of highly skilled experts.
                   </p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function Home() {
 
             </div>
             <div className="relative md:w-[40%]">
-  <img
+  <image
     alt=""
     loading="lazy"
     width="1189"
@@ -154,7 +154,7 @@ export default function Home() {
     srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FEllipsefull.804e61a8.png&amp;w=1200&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FEllipsefull.804e61a8.png&amp;w=3840&amp;q=75 2x"
     src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FEllipsefull.804e61a8.png&amp;w=3840&amp;q=75"
   />
-  <img
+  <image
     alt=""
     loading="lazy"
     width="530"
@@ -184,7 +184,7 @@ export default function Home() {
              Advanced AI Driven Solutions 
             </h1>
             <p className="mt-4 text-lg lg:text-base xl:text-lg text-white">
-             Abisentry's Advanced AI Driven Solutions Effectively prevents breaches, fraud and other cyber threats.
+             Abisentrys Advanced AI Driven Solutions Effectively prevents breaches, fraud and other cyber threats.
            </p>
           </div>
         </div>
@@ -830,7 +830,7 @@ export default function Home() {
         <div className="px-5 sm:px-10 md:px-20 py-10 mt-10">
   <div className="md:flex justify-between items-start mb-7">
   <div className="flex items-center">
-  <img
+  <image
     src="./assets/kit.png"
     alt=""
     

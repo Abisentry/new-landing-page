@@ -1,5 +1,6 @@
 import React, { components } from 'react';
 import link from 'next/link';
+import { FaTimes } from 'react-icons/fa';
 
 const Modal = ({ isOpen, onClose, children }) => {
   useEffect(() => {
